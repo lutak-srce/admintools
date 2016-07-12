@@ -35,7 +35,6 @@ class admintools {
       package { 'bind9utils':      ensure => present, }
       package { 'etckeeper':       ensure => present, }
       package { 'changetrack':     ensure => present, }
-      package { 'apticron':        ensure => present, }
     }
     /(RedHat|redhat|amazon)/: {
       package { 'bind-utils':      ensure => present, }
