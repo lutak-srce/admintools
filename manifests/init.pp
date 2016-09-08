@@ -35,6 +35,7 @@ class admintools {
       package { 'bind9utils':      ensure => present, }
       package { 'etckeeper':       ensure => present, }
       package { 'changetrack':     ensure => present, }
+      package { 'apticron':        ensure => present, }
     }
     /(RedHat|redhat|amazon)/: {
       package { 'bind-utils':      ensure => present, }
@@ -45,12 +46,18 @@ class admintools {
     default: { }
     'CentOS' : {
       case $::operatingsystemrelease {
-        default: { package { 'man':          ensure => present, } }
-        /^7.*/: { package { 'man-db':          ensure => present, } } }
+        default : {
+          package { 'man':       ensure => present, }
+        }
+        /^7.*/: {
+          package { 'man-db':    ensure => present, }
+          package { 'man-pages': ensure => present, }
+        }
+      }
     }
     'Fedora' : {
-      package { 'man-db':       ensure => present, }
-      package { 'man-pages':    ensure => present, }
+      package { 'man-db':    ensure => present, }
+      package { 'man-pages': ensure => present, }
     }
   }
 }
