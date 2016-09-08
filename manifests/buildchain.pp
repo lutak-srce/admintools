@@ -4,7 +4,7 @@
 #
 class admintools::buildchain {
 
-  package { 'make':    ensure => present, }
+  include ::tools::make
   package { 'gcc':     ensure => present, }
   package { 'gcc-c++': ensure => present, }
   package { 'kernel-headers': ensure => present, }
