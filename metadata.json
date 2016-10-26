@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Lutak Srce",
   "summary": "Installs various administrative packages.",
-  "license": "Apache Version 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/lutak-srce/admintools",
   "project_page": "https://github.com/lutak-srce/admintools",
   "operatingsystem_support": [
