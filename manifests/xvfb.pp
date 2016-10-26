@@ -15,11 +15,11 @@ class admintools::xvfb {
   }
 
   file { '/etc/rc.d/init.d/xvfb':
-    ensure  => file,
-    owner   => root,
-    group   => root,
-    mode    => '0755',
-    source  => 'puppet:///modules/admintools/xvfb-init',
+    ensure => file,
+    owner  => root,
+    group  => root,
+    mode   => '0755',
+    source => 'puppet:///modules/admintools/xvfb-init',
   }
 
   service { 'xvfb':
