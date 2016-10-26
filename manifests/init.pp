@@ -14,20 +14,22 @@ class admintools {
   package { 'nmap':         ensure => present, }
   include ::tools::screen
   include ::tools::tmux
-  package { 'zsh':          ensure => present, }
-  package { 'atop':         ensure => present, }
-  package { 'htop':         ensure => present, }
-  package { 'mutt':         ensure => present, }
-  package { 'iftop':        ensure => present, }
-  package { 'iotop':        ensure => present, }
-  package { 'tcpdump':      ensure => present, }
-  package { 'mc':           ensure => present, }
-  package { 'ncdu':         ensure => present, }
-  package { 'strace':       ensure => present, }
-  package { 'telnet':       ensure => present, }
-  package { 'lsof':         ensure => present, }
-  package { 'expect':       ensure => present, }
-  package { 'gawk':         ensure => present, }
+  package { 'zsh':          ensure     => present, }
+  package { 'atop':         ensure     => present, }
+  package { 'htop':         ensure     => present, }
+  package { 'mutt':         ensure     => present, }
+  package { 'iftop':        ensure     => present, }
+  package { 'iotop':        ensure     => present, }
+  package { 'tcpdump':      ensure     => present, }
+  package { 'mc':           ensure     => present, }
+  package { 'ncdu':         ensure     => present, }
+  package { 'strace':       ensure     => present, }
+  package { 'telnet':       ensure     => present, }
+  package { 'lsof':         ensure     => present, }
+  package { 'expect':       ensure     => present, }
+  package { 'gawk':         ensure     => present, }
+  package { 'psmisc':       ensure     => present, }
+  package { 'binutils':     ensure     => present, }
 
   case $::osfamily {
     default: { }
