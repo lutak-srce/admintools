@@ -20,7 +20,7 @@ class admintools {
   package { 'mutt':         ensure     => present, }
   package { 'iftop':        ensure     => present, }
   package { 'iotop':        ensure     => present, }
-  package { 'tcpdump':      ensure     => present, }
+  include ::tools::tcpdump
   package { 'mc':           ensure     => present, }
   package { 'ncdu':         ensure     => present, }
   package { 'strace':       ensure     => present, }
