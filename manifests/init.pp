@@ -8,6 +8,7 @@ class admintools {
   include ::tools::vim
 
   package { 'wget':         ensure => present, }
+  package { 'curl':         ensure => present, }
   package { 'rsync':        ensure => present, }
 
   # admin tools
