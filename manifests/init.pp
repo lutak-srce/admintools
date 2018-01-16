@@ -4,7 +4,6 @@
 #
 
 class admintools {
-  include ::ssh
   include ::tools::vim
 
   package { 'wget':         ensure => present, }
