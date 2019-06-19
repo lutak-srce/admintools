@@ -4,10 +4,10 @@
 #
 
 class admintools {
+  include ::ssh
   include ::tools::vim
 
   package { 'wget':         ensure => present, }
-  package { 'curl':         ensure => present, }
   package { 'rsync':        ensure => present, }
 
   # admin tools
@@ -20,7 +20,7 @@ class admintools {
   package { 'mutt':         ensure     => present, }
   package { 'iftop':        ensure     => present, }
   package { 'iotop':        ensure     => present, }
-  include ::tools::tcpdump
+  package { 'tcpdump':      ensure     => present, }
   package { 'mc':           ensure     => present, }
   package { 'ncdu':         ensure     => present, }
   package { 'strace':       ensure     => present, }
@@ -30,11 +30,14 @@ class admintools {
   package { 'gawk':         ensure     => present, }
   package { 'psmisc':       ensure     => present, }
   package { 'binutils':     ensure     => present, }
+  package { 'ltrace':       ensure     => present, }
+  package { 'sysstat':      ensure     => present, }
 
   case $::osfamily {
     default: { }
     /(Debian|debian|Ubuntu|ubuntu)/: {
       package { 'bind9utils':      ensure => present, }
+      package { 'dnsutils':      ensure => present, }
       package { 'etckeeper':       ensure => present, }
       package { 'changetrack':     ensure => present, }
       package { 'apticron':        ensure => present, }
