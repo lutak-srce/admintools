@@ -37,8 +37,11 @@ class admintools {
       package { 'bind9utils':      ensure => present, }
       package { 'etckeeper':       ensure => present, }
       package { 'changetrack':     ensure => present, }
-      package { 'apticron':        ensure => present, }
       package { 'debsums':         ensure => present, }
+      package { 'apticron':        ensure => present, }
+      file { '/etc/cron.d/apticron':
+        source => 'puppet:///modules/admintools/apticron/cron.d',
+      }
     }
     /(RedHat|redhat|amazon)/: {
       package { 'bind-utils':      ensure => present, }
