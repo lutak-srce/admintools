@@ -5,9 +5,5 @@
 class admintools::ksh {
 
   package { 'ksh': ensure => present, }
-  file { '/usr/bin/ksh':
-    ensure => link,
-    target => '/bin/ksh',
-  }
 
 }
