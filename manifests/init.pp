@@ -30,7 +30,7 @@ class admintools {
   package { 'gawk':         ensure     => present, }
   package { 'psmisc':       ensure     => present, }
   package { 'binutils':     ensure     => present, }
-  package { 'ltrace':       ensure     => present, }
+  include tools::ltrace
   package { 'sysstat':      ensure     => present, }
 
   case $::osfamily {
