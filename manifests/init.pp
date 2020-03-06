@@ -37,11 +37,12 @@ class admintools {
     default: { }
     /(Debian|debian|Ubuntu|ubuntu)/: {
       package { 'bind9utils':      ensure => present, }
-      package { 'dnsutils':      ensure => present, }
+      package { 'dnsutils':      ensure   => present, }
       package { 'etckeeper':       ensure => present, }
       package { 'changetrack':     ensure => present, }
       package { 'debsums':         ensure => present, }
       package { 'apticron':        ensure => present, }
+      package { 'sg3-utils':       ensure =>  present, }
       file { '/etc/cron.d/apticron':
         source => 'puppet:///modules/admintools/apticron/cron.d',
       }
