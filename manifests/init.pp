@@ -13,25 +13,26 @@ class admintools {
   include ::tools::tcpdump
   include ::tools::ltrace
 
-  package { 'wget'     : ensure => present, }
-  package { 'rsync'    : ensure => present, }
-  package { 'nmap'     : ensure => present, }
-  package { 'zsh'      : ensure => present, }
-  package { 'atop'     : ensure => present, }
-  package { 'htop'     : ensure => present, }
-  package { 'mutt'     : ensure => present, }
-  package { 'iftop'    : ensure => present, }
-  package { 'iotop'    : ensure => present, }
-  package { 'mc'       : ensure => present, }
-  package { 'ncdu'     : ensure => present, }
-  package { 'strace'   : ensure => present, }
-  package { 'telnet'   : ensure => present, }
-  package { 'lsof'     : ensure => present, }
-  package { 'expect'   : ensure => present, }
-  package { 'gawk'     : ensure => present, }
-  package { 'psmisc'   : ensure => present, }
-  package { 'binutils' : ensure => present, }
-  package { 'sysstat'  : ensure => present, }
+  package { 'wget'            : ensure => present, }
+  package { 'rsync'           : ensure => present, }
+  package { 'nmap'            : ensure => present, }
+  package { 'zsh'             : ensure => present, }
+  package { 'atop'            : ensure => present, }
+  package { 'htop'            : ensure => present, }
+  package { 'mutt'            : ensure => present, }
+  package { 'iftop'           : ensure => present, }
+  package { 'iotop'           : ensure => present, }
+  package { 'mc'              : ensure => present, }
+  package { 'ncdu'            : ensure => present, }
+  package { 'strace'          : ensure => present, }
+  package { 'telnet'          : ensure => present, }
+  package { 'lsof'            : ensure => present, }
+  package { 'expect'          : ensure => present, }
+  package { 'gawk'            : ensure => present, }
+  package { 'psmisc'          : ensure => present, }
+  package { 'binutils'        : ensure => present, }
+  package { 'sysstat'         : ensure => present, }
+  package { 'bash-completion' : ensure => present, }
 
   case $::osfamily {
     default: { }
