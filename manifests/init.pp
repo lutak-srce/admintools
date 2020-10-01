@@ -16,7 +16,6 @@ class admintools {
   package { 'atop'            : ensure => present, }
   package { 'bash-completion' : ensure => present, }
   package { 'binutils'        : ensure => present, }
-  package { 'chezmoi'         : ensure => present, }
   package { 'expect'          : ensure => present, }
   package { 'gawk'            : ensure => present, }
   package { 'htop'            : ensure => present, }
@@ -51,6 +50,7 @@ class admintools {
     }
     /(RedHat|redhat|amazon)/: {
       package { 'bind-utils' : ensure => present, }
+      package { 'chezmoi'    : ensure => present, }
     }
   }
 
@@ -69,7 +69,9 @@ class admintools {
     }
     'Debian' : {
       case $::operatingsystemrelease {
-        default : { }
+        default : {
+          package { 'chezmoi' : ensure => present, }
+        }
         /^(9|10).*/: {
           package { 'fzf' : ensure => present, }
         }
