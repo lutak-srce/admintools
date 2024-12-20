@@ -3,7 +3,6 @@
 #
 # This modules installs basic administration utilities
 #
-
 class admintools {
 
   include ssh
@@ -35,7 +34,7 @@ class admintools {
   package { 'wget'            : ensure => present, }
   package { 'zsh'             : ensure => present, }
 
-  case $::osfamily {
+  case $facts['os']['family'] {
     default: { }
     /(Debian|debian|Ubuntu|ubuntu)/: {
       package { 'apticron'    : ensure => present, }
@@ -54,10 +53,10 @@ class admintools {
     }
   }
 
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     default: { }
     'CentOS' : {
-      case $::operatingsystemrelease {
+      case $facts['os']['release']['full'] {
         default : {
           package { 'man' : ensure => present, }
         }
@@ -68,7 +67,7 @@ class admintools {
       }
     }
     'Debian' : {
-      case $::operatingsystemrelease {
+      case $facts['os']['release']['full'] {
         default : { }
         /^(9|10).*/: {
           package { 'fzf' : ensure => present, }
