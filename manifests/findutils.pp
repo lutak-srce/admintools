@@ -3,7 +3,7 @@
 # This modules installs extra administration utilities
 #
 class admintools::findutils {
-  case $::osfamily {
+  case $facts['os']['family'] {
     default: { }
     /(Debian|debian|Ubuntu|ubuntu)/: {
       package { 'locate': ensure  => present, }
