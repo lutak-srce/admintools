@@ -15,6 +15,7 @@ class admintools {
   package { 'atop'            : ensure => present, }
   package { 'bash-completion' : ensure => present, }
   package { 'binutils'        : ensure => present, }
+  package { 'btop'            : ensure => present, }
   package { 'curl'            : ensure => present, }
   package { 'expect'          : ensure => present, }
   package { 'gawk'            : ensure => present, }
