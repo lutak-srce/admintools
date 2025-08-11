@@ -38,10 +38,18 @@ class admintools {
     default: { }
     /(Debian|debian|Ubuntu|ubuntu)/: {
       package { 'apticron'    : ensure => present, }
-      package { 'bind9utils'  : ensure => present, }
+      case $facts['os']['distro']['codename'] {
+        default: {
+          package { 'bind9utils'  : ensure => present, }
+          package { 'dnsutils'    : ensure => present, }
+        }
+        'trixie': {
+          package { 'bind9-utils'  : ensure => present, }
+          package { 'bind9-dnsutils'  : ensure => present, }
+        }
+      }
       package { 'changetrack' : ensure => present, }
       package { 'debsums'     : ensure => present, }
-      package { 'dnsutils'    : ensure => present, }
       package { 'etckeeper'   : ensure => present, }
       package { 'sg3-utils'   : ensure => present, }
       file { '/etc/cron.d/apticron':
