@@ -9,7 +9,9 @@ class admintools::findutils {
       package { 'locate': ensure  => present, }
     }
     /(RedHat|redhat|amazon)/: {
-      package { 'mlocate': ensure  => present, }
+      case $facts['os']['release']['full'] {
+        default: { package { 'mlocate': ensure  => present, } }
+        /^10.*/: { package { 'plocate': ensure  => present, } }
     }
   }
 }
