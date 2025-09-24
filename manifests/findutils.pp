@@ -12,6 +12,7 @@ class admintools::findutils {
       case $facts['os']['release']['full'] {
         default: { package { 'mlocate': ensure  => present, } }
         /^10.*/: { package { 'plocate': ensure  => present, } }
+      }
     }
   }
 }
