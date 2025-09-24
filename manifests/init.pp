@@ -46,6 +46,8 @@ class admintools {
         'trixie': {
           package { 'bind9-utils'  : ensure => present, }
           package { 'bind9-dnsutils'  : ensure => present, }
+          package { 'lastlog2'  : ensure => present, }
+          package { 'btop'  : ensure => present, }
         }
       }
       package { 'changetrack' : ensure => present, }
