@@ -60,6 +60,7 @@ class admintools {
     }
     /(RedHat|redhat|amazon)/: {
       package { 'bind-utils' : ensure => present, }
+      package { 'rpmconf' : ensure => present, }
     }
   }
 
